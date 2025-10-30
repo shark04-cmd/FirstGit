@@ -38,18 +38,15 @@ public class BankingSystemMain {
 			case 1: 
 				handler.makeAccount(); // 신규 계좌 개설
 				break;
-			
 			case 2:
 				handler.depositMoney(); // 입금
 				break;
 			case 3:
 				handler.withdrawMoney(); // 출금
 				break;
-				
 			case 4:
 				handler.showAccInfo(); // 전체 계좌 출력
 				break;
-				
 			case 5:
 				System.out.println(" 프로그램 종료 "); // 프로그램 종료
 				return;

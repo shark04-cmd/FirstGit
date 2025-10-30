@@ -21,11 +21,14 @@ public class HighCreditAccount extends Account implements ICustomDefine{
 	public void deposit(int money) {
 		
 //		입력된 문자가 "A" 랑 같으면 ICustomDefine 여기에서 A값을 받아옴 ("A" == 7 )
-		if (CREDIT.equals("A")) credit_interest_rate = ICustomDefine.CREDIT.A;
+		if (CREDIT.equals("A")) 
+			credit_interest_rate = ICustomDefine.CREDIT.A;
 //		입력된 문자가 "B" 랑 같으면 ICustomDefine 여기에서 A값을 받아옴 ("B" == 4 )
-		else if (CREDIT.equals("B")) credit_interest_rate = ICustomDefine.CREDIT.B;
+		else if (CREDIT.equals("B")) 
+			credit_interest_rate = ICustomDefine.CREDIT.B;
 //		입력된 문자가 "C" 랑 같으면 ICustomDefine 여기에서 A값을 받아옴 ("C" == 2 )
-		else if (CREDIT.equals("C")) credit_interest_rate = ICustomDefine.CREDIT.C;
+		else if (CREDIT.equals("C")) 
+			credit_interest_rate = ICustomDefine.CREDIT.C;
 		
 //		입금 전 잔액 + ((입금전 잔액 * 이자%) + (입금전 잔액 * 신용등급 이자%) + 입금 금액)
 		balance += ((balance * interest_rate / 100) + 

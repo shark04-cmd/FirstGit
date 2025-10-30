@@ -46,30 +46,24 @@ public class AccountManager{
 		
 //		이자율을 입력받는다.
 		System.out.print(" 이자율 : ");
-			interest_rate = BankingSystemMain.scan.nextInt();
-			BankingSystemMain.scan.nextLine();
+		interest_rate = BankingSystemMain.scan.nextInt();
+		BankingSystemMain.scan.nextLine();
 			
+	 
 		if(choice==1) {
+			System.out.println(" A, B, C 중에서 골라주세요! ");
+			System.out.print(" 신용 등급 : ");
+				credit_interest_rate = BankingSystemMain.scan.nextLine();
 			
+			HighCreditAccount high = 
+				new HighCreditAccount(account_number, name, balance, interest_rate, credit_interest_rate);
+			accounts[numOfAccounted++] = high;
+		}			
+		else if(choice==2) {
+			System.out.print("");
+			accounts[numOfAccounted++] = new
+			NormalAccount(account_number, name, balance, interest_rate);
 		}
-		
-		else if (choice==2) {}
-			if(choice==1) {
-				System.out.println(" A, B, C 중에서 골라주세요! ");
-				System.out.print(" 신용 등급 : ");
-					credit_interest_rate = BankingSystemMain.scan.nextLine();
-				
-				HighCreditAccount high = 
-					new HighCreditAccount(account_number, name, balance, interest_rate, credit_interest_rate);
-				accounts[numOfAccounted++] = high;
-				
-			}
-			
-			else if(choice==2) {
-				System.out.print("");
-				accounts[numOfAccounted++] = new
-				NormalAccount(account_number, name, balance, interest_rate);
-			}
 		
 		
 		System.out.println();

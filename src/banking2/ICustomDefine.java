@@ -1,12 +1,11 @@
 package banking2;
 
 public interface ICustomDefine {
-	
-	interface CREDIT{
+	 
 		int A = 7;
 		int B = 4;
 		int C = 2;
-	}
+	 
 }				
 /*
 interface로 생성한다. 
