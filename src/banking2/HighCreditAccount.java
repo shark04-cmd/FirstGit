@@ -2,7 +2,7 @@ package banking2;
 
 
 public class HighCreditAccount extends Account implements ICustomDefine{
-	String CREDIT; // 신용등급 A , B , C 로 나뉘여져있음
+	String ICustomDefine; // 신용등급 A , B , C 로 나뉘여져있음
 	
 	int interest_rate; // 이자율
 	int credit_interest_rate = 0; // 신용 등급에 따른 이자율
@@ -10,34 +10,39 @@ public class HighCreditAccount extends Account implements ICustomDefine{
 //	public 접근 제어자 (어디서든 이 생성자를 쓸 수 있음) NormalAccount (클래스 이름) 
 //	String ㅁㅁ (객체를 만들 때 전받을 초기값)
 //	요약] public( 어디서든 쓸수있다.) NormalAccount (노말 어카운트에 있는) (String ㅁㅁ) (생성자를 )
-	public HighCreditAccount(String account_number, String name, int balance, 
-			int interest_rate, String credit_interest_rate) {
+	public HighCreditAccount(String account_number, String name, String credit_interest_rate
+			, int balance, int interest_rate) {
 		super(account_number, name, balance);
 		this.interest_rate = interest_rate;
-		this.CREDIT = credit_interest_rate;
 	}
 	
-	
+	@Override
 	public void deposit(int money) {
 		
 //		입력된 문자가 "A" 랑 같으면 ICustomDefine 여기에서 A값을 받아옴 ("A" == 7 )
-		if (CREDIT.equals("A")) 
-			credit_interest_rate = ICustomDefine.CREDIT.A;
+		if (ICustomDefine.equals("A")) 
+			credit_interest_rate = "A";
 //		입력된 문자가 "B" 랑 같으면 ICustomDefine 여기에서 A값을 받아옴 ("B" == 4 )
-		else if (CREDIT.equals("B")) 
-			credit_interest_rate = ICustomDefine.CREDIT.B;
+		else if (ICustomDefine.equals("B")) 
+			credit_interest_rate = "B";
 //		입력된 문자가 "C" 랑 같으면 ICustomDefine 여기에서 A값을 받아옴 ("C" == 2 )
-		else if (CREDIT.equals("C")) 
-			credit_interest_rate = ICustomDefine.CREDIT.C;
-		
+		else if (ICustomDefine.equals("C")) 
+			credit_interest_rate = "C";
 //		입금 전 잔액 + ((입금전 잔액 * 이자%) + (입금전 잔액 * 신용등급 이자%) + 입금 금액)
 		balance += ((balance * interest_rate / 100) + 
 			(balance * credit_interest_rate / 100) + money);
 	}
-	
-	public void withdraw(int money) {
-		balance -= money;
+	@Override
+	private void withdraw(int money) {
+		if (balance >= money) {
+			
+		}
+		
+		
 	}
+	
+	
+	
 	
 	@Override
 		public void showAccInfo() {
